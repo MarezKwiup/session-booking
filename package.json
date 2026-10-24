@@ -4,6 +4,7 @@
         "dev": "tsx watch src/index.ts",
         "build": "tsc",
         "start": "node dist/index.js",
+        "db:sync-indexes": "tsx scripts/sync-indexes.ts",
         "typecheck": "tsc --noEmit"
     }
 }
