@@ -6,5 +6,19 @@
         "start": "node dist/index.js",
         "db:sync-indexes": "tsx scripts/sync-indexes.ts",
         "typecheck": "tsc --noEmit"
+    },
+    "dependencies": {
+        "dotenv": "^18.0.9",
+        "express": "^5.3.0",
+        "mongoose": "^9.11.4",
+        "morgan": "^1.12.1",
+        "zod": "^4.6.7"
+    },
+    "devDependencies": {
+        "@types/express": "^5.0.6",
+        "@types/morgan": "^1.9.10",
+        "@types/node": "^26.6.5",
+        "tsx": "^4.23.15",
+        "typescript": "^5.9.3"
     }
 }
