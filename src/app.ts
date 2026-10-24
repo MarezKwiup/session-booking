@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import morgan from 'morgan';
+import { errorHandler, notFoundHandler } from './middlewares/errorHandler';
 
 export function createApp() {
     const app = express();
@@ -16,6 +17,9 @@ export function createApp() {
             db: dbUp ? 'up' : 'down'
         });
     })
+
+    app.use(notFoundHandler);
+    app.use(errorHandler);
 
     return app;
 }
