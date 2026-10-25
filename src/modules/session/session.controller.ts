@@ -12,3 +12,13 @@ export async function getAvailableSessions(_req: Request, res: Response) {
     const sessions = await sessionService.getAvailableSessions(dateTimestamp, timezone);
     res.status(200).json({ success: true, count: sessions.length, data: sessions });
 }
+
+export async function bookSession(_req: Request, res: Response) {
+    const session = await sessionService.bookSession(res.locals.params.id, res.locals.body.userId);
+    res.status(200).json({ success: true, data: session });
+}
+
+export async function completeSession(_req: Request, res: Response) {
+    const session = await sessionService.completeSession(res.locals.params.id);
+    res.status(200).json({ success: true, data: session });
+}

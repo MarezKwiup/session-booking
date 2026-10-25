@@ -18,4 +18,8 @@ export const availableSessionQuery = z.object({
     timezone: z.string().refine(isValidTimezone, 'Invalid IANA timezone').optional(),
 });
 
+export const bookSessionSchema = z.object({
+    userId: objectId,
+});
+
 export type CreateSessionInput = z.infer<typeof createSessionSchema>;
