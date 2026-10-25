@@ -5,3 +5,8 @@ export async function createUser(_req: Request, res: Response) {
     const user = await userService.createUser(res.locals.body);
     res.status(201).json({ success: true, data: user });
 }
+
+export async function getUserSessions(_req: Request, res: Response) {
+    const data = await userService.getUserSessions(res.locals.params.id);
+    res.status(200).json({ success: true, data });
+}
