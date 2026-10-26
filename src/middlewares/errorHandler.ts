@@ -2,7 +2,6 @@ import { ErrorRequestHandler, RequestHandler } from "express";
 import mongoose from "mongoose";
 import { env } from '../config/env';
 import { ApiError } from "../utils/ApiError";
-import { success } from "zod";
 
 export const notFoundHandler: RequestHandler = (req, _res, next) => {
     next(ApiError.notFound(`Route not found: ${req.method} ${req.originalUrl}`));
